@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "746060363440",
+    "firebase_url": "https://gustoregistryform.firebaseio.com",
+    "project_id": "gustoregistryform",
+    "storage_bucket": "gustoregistryform.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:746060363440:android:ce14df37b14b81f8766d75",
+        "android_client_info": {
+          "package_name": "com.example.moneysavingstudents"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "746060363440-oguepu8g8v5eimi2qlemhl7n6ehqgr2v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgQ8RuyWboScT3ks6Ac7jlE2KM_oUq6jY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "746060363440-oguepu8g8v5eimi2qlemhl7n6ehqgr2v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:746060363440:android:dacc0e705f3eee3f766d75",
+        "android_client_info": {
+          "package_name": "com.gusto.college.gustoregistryform"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "746060363440-spbgqbornmdsriouqk8jtrs7et8v0mct.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gusto.college.gustoregistryform",
+            "certificate_hash": "c1c7811b4589305ee7fdd4d052c6c8d62eda4ebc"
+          }
+        },
+        {
+          "client_id": "746060363440-oguepu8g8v5eimi2qlemhl7n6ehqgr2v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgQ8RuyWboScT3ks6Ac7jlE2KM_oUq6jY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "746060363440-oguepu8g8v5eimi2qlemhl7n6ehqgr2v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

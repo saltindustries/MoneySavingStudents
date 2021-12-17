@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MoneySavingStudents/app/src/main/res/drawable/baseline_grading_black_24dp.xml" value="0.3828125" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MoneySavingStudents/app/src/main/res/font/antic.xml" value="0.2760416666666667" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MoneySavingStudents/app/src/main/res/font/bungee.xml" value="0.2760416666666667" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MoneySavingStudents/app/src/main/res/font/roboto.xml" value="0.2760416666666667" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MoneySavingStudents/app/src/main/res/font/roboto_condensed_bold.xml" value="0.2760416666666667" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MoneySavingStudents/app/src/main/res/layout/activity_add_items.xml" value="0.33" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MoneySavingStudents/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MoneySavingStudents/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MoneySavingStudents/app/src/main/res/layout/activity_sign_up.xml" value="0.25679347826086957" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MoneySavingStudents/app/src/main/res/layout/activity_user_profile.xml" value="0.22" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MoneySavingStudents/app/src/main/res/layout/activity_view_items.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MoneySavingStudents/app/src/main/res/layout/activity_view_items_individual.xml" value="0.33" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MoneySavingStudents/app/src/main/res/layout/layout_recyclerview.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
