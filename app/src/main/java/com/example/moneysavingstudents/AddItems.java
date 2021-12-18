@@ -1,6 +1,7 @@
 package com.example.moneysavingstudents;
 
 import android.content.Intent;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,11 +20,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.seismic.ShakeDetector;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class AddItems extends AppCompatActivity {
+public class AddItems extends AppCompatActivity{
 
     Button addItem, cancelItem;
     TextInputLayout prodName, prodPrice, prodUrl, prodCategory;

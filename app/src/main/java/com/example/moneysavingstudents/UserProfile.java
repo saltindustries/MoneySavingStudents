@@ -3,6 +3,7 @@ package com.example.moneysavingstudents;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,8 +14,9 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.seismic.ShakeDetector;
 
-public class UserProfile extends AppCompatActivity {
+public class UserProfile extends AppCompatActivity implements  ShakeDetector.Listener{
 
     TextView fullNameLabel, usernameLabel, emailLabel;
     TextInputLayout fullName, email;
@@ -29,6 +31,11 @@ public class UserProfile extends AppCompatActivity {
         setContentView(R.layout.activity_user_profile);
 
         reference = FirebaseDatabase.getInstance("https://doineedit-f0389-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("users");
+
+        // Shake Detector
+        SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        ShakeDetector shakeDetector = new ShakeDetector(this);
+        shakeDetector.start(sensorManager);
 
         //Hooks
         fullNameLabel = findViewById(R.id.profile_fullname);
@@ -115,5 +122,10 @@ public class UserProfile extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void hearShake() {
+        Toast.makeText(this, "Device shook", Toast.LENGTH_SHORT).show();
     }
 }

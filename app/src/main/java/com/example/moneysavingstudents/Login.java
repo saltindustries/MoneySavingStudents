@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Pair;
 import android.view.View;
@@ -21,8 +22,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.seismic.ShakeDetector;
 
-public class Login extends AppCompatActivity {
+public class Login extends AppCompatActivity{
 
     Button callSignUp, btn_login;
     ImageView logo_image;
