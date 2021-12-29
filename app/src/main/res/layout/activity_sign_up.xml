@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto"
-            android:text="Sign Up to start browsing"
+            android:text="Sign Up now!"
             android:textSize="18sp" />
 
         <LinearLayout
@@ -136,7 +136,7 @@
             android:id="@+id/btnGoLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Already have an account? Log In"
+            android:text="Existing User? Log in instead"
             android:transitionName="btn_signup_tran"
             android:background="#00000000"/>
     </LinearLayout>

@@ -44,9 +44,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         String pPrice=productList.get(position).getTv2();
         String pLink=productList.get(position).getTv3();
         String pCategory=productList.get(position).getTv4();
-        Boolean pPurchased=productList.get(position).getPurchased();
+        boolean pPurchased=productList.get(position).getPurchased();
         String user_username=productList.get(position).getUser_username();
+        String user_name=productList.get(position).getUser_name();
+        String user_email=productList.get(position).getUser_email();
 
+        int key=position;
         holder.setData(pName,pPrice,pLink,pCategory, pPurchased, position, user_username);
 
         holder.tv1.setText(pName);
@@ -64,7 +67,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             public void onClick(View v) {
                 String temp=""+position;
 
-                   Boolean pPurchased= productList.get(position).getPurchased();
+                   boolean pPurchased= productList.get(position).getPurchased();
 
                     if(pPurchased){
                         reference.child(temp).child("productPurchased").setValue(false);
@@ -95,7 +98,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
                 intent.putExtra("ProductPrice",pPrice);
                 intent.putExtra("ProductLink",pLink);
                 intent.putExtra("ProductCategory",pCategory);
-
+                intent.putExtra("UserUsername",user_username);
+                intent.putExtra("key", key);
+                intent.putExtra("UserName", user_name);
+                intent.putExtra("UserEmail", user_email);
+                if (pPurchased){
+                    intent.putExtra("purhcased", true);
+                }
                 context.startActivity(intent);
 
             }
@@ -107,7 +116,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             public void onClick(View v) {
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                String myMessage = ("I'd love this item. " + pName + " " + pPrice + " " + pLink);
+                String myMessage = ("I've been thinking about buying this item... I'd like to share it with you." +
+                        "\n - " + pName +
+                        "\n - $" + pPrice +
+                        "\n - " + pLink +
+                        "\n - " + pCategory);
                 sendIntent.putExtra(Intent.EXTRA_TEXT, myMessage);
                 sendIntent.setType("text/plain");
                 Intent shareIntent = Intent.createChooser(sendIntent, null);

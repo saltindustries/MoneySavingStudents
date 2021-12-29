@@ -70,6 +70,7 @@ public class UserProfile extends AppCompatActivity implements  ShakeDetector.Lis
                 Intent intent = new Intent(UserProfile.this,ViewItems.class);
                 intent.putExtra("name",  user_name);
                 intent.putExtra("username",user_username);
+                intent.putExtra("email",user_email);
                 startActivity(intent);
             }
         });
@@ -91,10 +92,10 @@ public class UserProfile extends AppCompatActivity implements  ShakeDetector.Lis
             @Override
             public void onClick(View v) {
                 if(isFullNameChanged() || isEmailChanged()) {
-                    Toast.makeText(getBaseContext(), "Data updated successful.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getBaseContext(), "Your info has been updated.", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Toast.makeText(getBaseContext(), "Data unchanged, nothing to update.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getBaseContext(), "No changes made.", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -127,5 +128,10 @@ public class UserProfile extends AppCompatActivity implements  ShakeDetector.Lis
     @Override
     public void hearShake() {
         Toast.makeText(this, "Device shook", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(UserProfile.this,AddItems.class);
+        intent.putExtra("name",  user_name);
+        intent.putExtra("username",user_username);
+        intent.putExtra("email",user_email);
+        startActivity(intent);
     }
 }

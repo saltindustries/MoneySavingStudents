@@ -112,6 +112,12 @@
             android:layout_height="wrap_content"
             android:text="Update Item"/>
 
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete Item"/>
+
     </LinearLayout>
 
 </LinearLayout>

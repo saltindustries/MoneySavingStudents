@@ -29,7 +29,7 @@ public class SignUp extends AppCompatActivity{
         String val = regName.getEditText().getText().toString();
 
         if(val.isEmpty()) {
-            regName.setError("Field cannot be empty.");
+            regName.setError("Field is empty.");
             return false;
         }
         else {
@@ -43,7 +43,15 @@ public class SignUp extends AppCompatActivity{
         String val = regUsername.getEditText().getText().toString();
 
         if(val.isEmpty()) {
-            regUsername.setError("Field cannot be empty.");
+            regUsername.setError("Field is empty.");
+            return false;
+        }
+        else if(val.length() >=13) {
+            regUsername.setError("Username is too long.");
+            return false;
+        }
+        else if(val.length() <=2) {
+            regUsername.setError("Username is too short.");
             return false;
         }
         else {
@@ -55,9 +63,14 @@ public class SignUp extends AppCompatActivity{
 
     private Boolean validateEmail() {
         String val = regEmail.getEditText().getText().toString();
+        String emailCheck = "[a-zA-z0-9._-]+@[a-z]+\\.+[a-z]+";
 
         if(val.isEmpty()) {
-            regEmail.setError("Field cannot be empty.");
+            regEmail.setError("Field is empty.");
+            return false;
+        }
+        else if(!val.matches(emailCheck)) {
+            regEmail.setError("Email address is invalid.");
             return false;
         }
         else {
@@ -71,7 +84,7 @@ public class SignUp extends AppCompatActivity{
         String val = regPhoneNo.getEditText().getText().toString();
 
         if(val.isEmpty()) {
-            regPhoneNo.setError("Field cannot be empty.");
+            regPhoneNo.setError("Field is empty.");
             return false;
         }
         else {
@@ -83,9 +96,18 @@ public class SignUp extends AppCompatActivity{
 
     private Boolean validatePassword() {
         String val = regPassword.getEditText().getText().toString();
+        String passwordCheck = "^" +
+                ".{8,}" + // at least 8 characters
+                "(?=.*[0-9])" + // at least 1 number
+                "(?=.*[@#$%^&+=])" + // at least 1 special character
+                "$";
 
         if(val.isEmpty()) {
-            regPassword.setError("Field cannot be empty.");
+            regPassword.setError("Field is empty.");
+            return false;
+        }
+        else if(!val.matches(passwordCheck)) {
+            regPassword.setError("Password is too weak.");
             return false;
         }
         else {
