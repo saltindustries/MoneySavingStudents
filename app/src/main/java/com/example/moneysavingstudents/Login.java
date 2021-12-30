@@ -51,21 +51,6 @@ public class Login extends AppCompatActivity{
         callSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // PAIR ANIMATIONS
-                /*Intent intent = new Intent(Login.this, SignUp.class);
-
-                Pair[] pairs = new Pair[7];
-
-                pairs[0] = new Pair<View, String>(logo_image, "logo_image");
-                pairs[1] = new Pair<View, String>(logo_text, "logo_text");
-                pairs[2] = new Pair<View, String>(logo_subtext, "logo_desc");
-                pairs[3] = new Pair<View, String>(username, "password_tran");
-                pairs[4] = new Pair<View, String>(password, "username_tran");
-                pairs[5] = new Pair<View, String>(btn_login, "btn_login_tran");
-                pairs[6] = new Pair<View, String>(callSignUp, "btn_signup_tran");
-
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(Login.this, pairs);
-                startActivity(intent, options.toBundle());*/
                 Intent intent = new Intent(Login.this,SignUp.class);
                 startActivity(intent);
             }
@@ -120,7 +105,7 @@ public class Login extends AppCompatActivity{
                     }
                 }
                 else {
-                    username.setError("No such User exist");
+                    username.setError("No existing user with this username");
                     username.requestFocus();
                 }
             }

@@ -107,7 +107,7 @@ public class SignUp extends AppCompatActivity{
             return false;
         }
         else if(!val.matches(passwordCheck)) {
-            regPassword.setError("Password is too weak.");
+            regPassword.setError("Password must be at least 8 characters with one number and special character.");
             return false;
         }
         else {

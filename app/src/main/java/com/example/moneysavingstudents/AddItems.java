@@ -28,7 +28,6 @@ public class AddItems extends AppCompatActivity{
 
     Button addItem, cancelItem;
     TextInputLayout prodName, prodPrice, prodUrl, prodCategory;
-    //AutoCompleteTextView productCategory;
     long size;
     FirebaseDatabase rootNode;
     DatabaseReference reference;
@@ -45,18 +44,11 @@ public class AddItems extends AppCompatActivity{
         prodPrice = findViewById(R.id.productPrice);
         prodUrl = findViewById(R.id.productLink);
         prodCategory = findViewById(R.id.productCategory);
-        //productCategory = findViewById(R.id.dropdownCategory);
 
         Intent intent = getIntent();
         String user_username = intent.getStringExtra("username");
         String user_name = intent.getStringExtra("name");
         String user_email = intent.getStringExtra("email");
-
-        /*String[]option = {"Electronics", "Games", "Food", "Books", "Stationary", "Clothing", "Other"};
-
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.dropdown_items, option);
-        productCategory.setText(arrayAdapter.getItem(0).toString(),false);
-        productCategory.setAdapter(arrayAdapter);*/
 
         // Adds item to DB and store it.
         addItem.setOnClickListener(new View.OnClickListener() {
