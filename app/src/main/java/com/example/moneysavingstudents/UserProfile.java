@@ -94,6 +94,9 @@ public class UserProfile extends AppCompatActivity implements  ShakeDetector.Lis
                 if(isFullNameChanged() || isEmailChanged()) {
                     Toast.makeText(getBaseContext(), "Your info has been updated.", Toast.LENGTH_SHORT).show();
                 }
+                else if (!isValidFullName() || !isValidEmail()) {
+                    Toast.makeText(getBaseContext(), "No changes made. Enter valid inputs.", Toast.LENGTH_SHORT).show();
+                }
                 else {
                     Toast.makeText(getBaseContext(), "No changes made.", Toast.LENGTH_SHORT).show();
                 }
@@ -101,10 +104,15 @@ public class UserProfile extends AppCompatActivity implements  ShakeDetector.Lis
 
             private boolean isEmailChanged() {
                 if (!user_email.equals(email.getEditText().getText().toString())){
-                    reference.child(user_username).child("email").setValue(email.getEditText().getText().toString());
-                    user_email = email.getEditText().getText().toString();
-                    emailLabel.setText(user_email);
-                    return true;
+                    if (isValidEmail()){
+                        reference.child(user_username).child("email").setValue(email.getEditText().getText().toString());
+                        user_email = email.getEditText().getText().toString();
+                        emailLabel.setText(user_email);
+                        return true;
+                    }
+                    else {
+                        return false;
+                    }
                 }
                 else {
                     return false;
@@ -113,13 +121,50 @@ public class UserProfile extends AppCompatActivity implements  ShakeDetector.Lis
 
             private boolean isFullNameChanged() {
                 if (!user_name.equals(fullName.getEditText().getText().toString())){
-                    reference.child(user_username).child("name").setValue(fullName.getEditText().getText().toString());
-                    user_name = fullName.getEditText().getText().toString();
-                    fullNameLabel.setText("WELCOME BACK, "+ user_name);
-                    return true;
+                    if (isValidFullName()) {
+                        reference.child(user_username).child("name").setValue(fullName.getEditText().getText().toString());
+                        user_name = fullName.getEditText().getText().toString();
+                        fullNameLabel.setText("WELCOME BACK, "+ user_name);
+                        return true;
+                    }
+                    else {
+                        return false;
+                    }
                 }
                 else {
                     return false;
+                }
+            }
+
+            private boolean isValidEmail() {
+                String val = email.getEditText().getText().toString();
+                String emailCheck = "[a-zA-z0-9._-]+@[a-z]+\\.+[a-z]+";
+
+                if (val.isEmpty()) {
+                    email.setError("Field cannot be empty.");
+                    return false;
+                }
+                else if (!val.matches(emailCheck)) {
+                    email.setError("Email address is invalid.");
+                    return false;
+                }
+                else {
+                    email.setError(null);
+                    email.setErrorEnabled(false);
+                    return true;
+                }
+            }
+
+            private boolean isValidFullName() {
+                String val = fullName.getEditText().getText().toString();
+                if (val.isEmpty()) {
+                    fullName.setError("Field cannot be empty.");
+                    return false;
+                }
+                else {
+                    fullName.setError(null);
+                    fullName.setErrorEnabled(false);
+                    return true;
                 }
             }
         });

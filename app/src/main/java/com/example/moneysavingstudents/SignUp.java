@@ -97,9 +97,11 @@ public class SignUp extends AppCompatActivity{
     private Boolean validatePassword() {
         String val = regPassword.getEditText().getText().toString();
         String passwordCheck = "^" +
-                ".{8,}" + // at least 8 characters
-                "(?=.*[0-9])" + // at least 1 number
-                "(?=.*[@#$%^&+=])" + // at least 1 special character
+                "(?=.*[0-9])" +       // at least one number
+                "(?=.*[a-z])" +       // at least one lower case letter
+                "(?=.*[A-Z])" +       // at least one upper case letter
+                "(?=.*[@#$%^&+=])" +  // at least one special character
+                ".{8,}" +             // at least 8 characters in length
                 "$";
 
         if(val.isEmpty()) {
@@ -107,7 +109,7 @@ public class SignUp extends AppCompatActivity{
             return false;
         }
         else if(!val.matches(passwordCheck)) {
-            regPassword.setError("Password must be at least 8 characters with one number and special character.");
+            regPassword.setError("Password must be at least 8 characters with one upper case, one special character and a number.");
             return false;
         }
         else {

@@ -72,24 +72,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_margin="5dp"
-            android:background="#00000000"
-            android:elevation="0dp"
-            android:text="Forget Password"
-            android:transitionName="btn_forgotpassword_tran"
-            android:textColor="#000"/>
-
-        <Button
             android:id="@+id/button_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="GO"
             android:transitionName="btn_login_tran"
             android:textColor="#fff"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="50dp"
             android:layout_marginBottom="5dp"
             android:onClick="loginUser"/>
 
