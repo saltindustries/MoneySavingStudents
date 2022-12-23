@@ -9,3 +9,4 @@ Full-stack Android application which helps you keep track of items you wish to b
 * User Profile CRUD functions
 * Wishlist CRUD functions
 * Share items to an external application
+* Gestures and motions
